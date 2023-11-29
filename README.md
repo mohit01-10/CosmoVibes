@@ -14,6 +14,7 @@ In my Python journey for CS310, I got hooked on space stuff and when it came tim
 - Distances are to scale, sizes are not to scale.
 - Calculations are done regarding Newton's laws with actual properties of the celestial bodies (Retrieved from <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA's fact sheets</a>)
 - Simple Planetary motion, comets and twinkling stars.
+- Smooth background music
 - P Key: Pause/Unpause the simulation
 - M Key: Mute/Unmute background music
 - I Key: Toggle information display for the selected planet
