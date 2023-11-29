@@ -13,24 +13,15 @@ In my Python journey for CS310, I got hooked on space stuff and when it came tim
 
 - Distances are to scale, sizes are not to scale.
 - Calculations are done regarding Newton's laws with actual properties of the celestial bodies (Retrieved from <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA's fact sheets</a>)
+- Simple Planetary motion, comets and twinkling stars.
 - P Key: Pause/Unpause the simulation
 - M Key: Mute/Unmute background music
 - I Key: Toggle information display for the selected planet
 - 1-8 Keys: Select specific planets
 - Q Key: Quit the simulation
 
-<center>
-<div>
-    <img src="https://i.imgur.com/MVt0M5c.png" width="360" height="240"/>
-    <img src="https://i.imgur.com/9vjm11h.png" width="360" height="240"/>
-</div>
-</center>
-<center>
-<div>
-    <img src="https://i.imgur.com/Odld53q.png" width="360" height="240"/>
-    <img src="https://i.imgflip.com/7ulnl2.gif" width="360" height="240/">
-</div>
-</center>
+<img width="800" alt="Screenshot 2023-11-29 at 5 03 20 PM" src="https://github.com/mohit01-10/Solar_system-Simulation/assets/114811695/72f5e2cc-0e5d-40fb-bad8-42bed667be38">
+<img width="800" alt="Screenshot 2023-11-29 at 5 05 44 PM" src="https://github.com/mohit01-10/Solar_system-Simulation/assets/114811695/7f9377a0-9588-44db-943f-b1ddc94ae543">
 
 ## Instructions on Usage
 - Download the project, go to the project directory , install pygame and you are good to go.
