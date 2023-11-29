@@ -19,11 +19,13 @@ BG_MUSIC = pygame.mixer.Sound("stay.mp3")
 BG_MUSIC.set_volume(0.9)
 BG_MUSIC.play(loops=-1)
 
-def draw_stars():
-    for _ in range(20):  # Adjust the number of stars as needed
-        x = random.randint(0, WIDTH)
-        y = random.randint(0, HEIGHT)
-        pygame.draw.circle(win, (255, 255, 255), (x, y), 1)  # Small white circle for each star
+# You can use this fuction for moving stars, call this function at 104 and remove line 104 and 105
+# def draw_stars():
+#     for _ in range(20):  # Adjust the number of stars as needed
+#         x = random.randint(0, WIDTH)
+#         y = random.randint(0, HEIGHT)
+#         pygame.draw.circle(win, (255, 255, 255), (x, y), 1)  # Small white circle for each star
+
 
 # Main function
 
