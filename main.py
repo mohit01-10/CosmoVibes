@@ -26,8 +26,44 @@ BG_MUSIC.play(loops=-1)
 #         y = random.randint(0, HEIGHT)
 #         pygame.draw.circle(win, (255, 255, 255), (x, y), 1)  # Small white circle for each star
 
-
 # Main function
+class Comet:
+    def __init__(self):
+        self.x = random.randint(0, WIDTH)
+        self.y = random.randint(0, HEIGHT)
+        self.radius = 1
+        self.color = (0, 255, 0)  # Green color
+        self.speed = 6 # Adjust the speed as needed
+        self.direction = random.choice(['left', 'right', 'up', 'down'])
+        self.initialize_position()
+    
+    def initialize_position(self):
+        if self.direction == 'left':
+            self.x = WIDTH
+            self.y = random.randint(0, HEIGHT)
+        elif self.direction == 'right':
+            self.x = 0
+            self.y = random.randint(0, HEIGHT)
+        elif self.direction == 'up':
+            self.x = random.randint(0, WIDTH)
+            self.y = HEIGHT
+        elif self.direction == 'down':
+            self.x = random.randint(0, WIDTH)
+            self.y = 0
+
+    def move(self):
+        if self.direction == 'left':
+            self.x -= self.speed
+        elif self.direction == 'right':
+            self.x += self.speed
+        elif self.direction == 'up':
+            self.y -= self.speed
+        elif self.direction == 'down':
+            self.y += self.speed
+
+    def draw_comet(self):
+        pygame.draw.circle(win, self.color, (self.x, self.y), self.radius)
+
 
 def main():
     clock = pygame.time.Clock()
@@ -37,15 +73,21 @@ def main():
     time_passed = 0
     pause_text = ""
     muted = False
+    comet_interval = 3000  # 3 seconds in milliseconds
+    comet_timer = 0
+
+    comet = None
 
     while running:
-        clock.tick(60)
+        dt = clock.tick(60)
 
         # Handle events
         for event in pygame.event.get():
             # If user quits it breaks out of the loop
             if event.type == pygame.QUIT:
                 running = False
+
+
 
             # Handle key presses
             if event.type == pygame.KEYDOWN:
@@ -88,6 +130,11 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if displayed_planet:
                     displayed_planet = None
+            
+            comet_timer += dt
+            if comet_timer >= comet_interval:
+                comet = [ Comet() for _ in range(3)]
+                comet_timer = 0
         
         # Calculate gravitational forces exerted on planets
         if not paused:
@@ -101,6 +148,11 @@ def main():
             # Fill the window before drawing the planets to avoid flickering
             win.fill((0, 0, 0))
 
+            if comet:
+                for c in comet:
+                    c.move()
+                    c.draw_comet()
+            
             for s in star_list:
                 s.show(win)
 
