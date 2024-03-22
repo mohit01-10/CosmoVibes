@@ -1,4 +1,4 @@
-# Solar System Simulation
+# CosmoVibes: A Solar System Simulator
 
 ![Language](https://img.shields.io/badge/language-python-blue)
 ![Module](https://img.shields.io/badge/module-pygame-orange)
